@@ -2,25 +2,48 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+//ето function declaration -спосіб створення функції
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    //здесь функция может делать штото полезное
+    // в конце функция обязана вернуть JSX
+
+    return (
+        <div className="App">
+            <div>This is App component</div>
+        </div>
+    );
+}
+
+function Rating() {
+    return (
+        <div>
+            <div>star </div>
+            <div>star </div>
+            <div>star </div>
+            <div>star </div>
+            <div>star </div>
+        </div>
+    )
+}
+
+
+//function expression
+const App2 = function () {
+    return (
+        <div className="App">
+            <div>This is App component</div>
+        </div>
+    );
+}
+
+//стрелочная функция
+const App3 = () => {
+    return (
+        <div className="App">
+            <div>This is App component</div>
+        </div>
+    );
 }
 
 export default App;
