@@ -10,50 +10,61 @@ function hello() {
 
 //ето function declaration -спосіб створення функції
 function App() {
-
+    console.log("App rendering")
     //здесь функция может делать штото полезное
     // в конце функция обязана вернуть JSX
 
     return (
         <div className="App">
-            <div>This is App component
-            <Rating />
-            <Accordion />
+            <div>
+                <AppTitle />
+                <Rating/>
+                <Accordion/>
+
+                <Rating/>
             </div>
         </div>
     );
 }
+function AppTitle() {
+    console.log("App Title rendering")
+return(
+    <>This is App component</>
+)
+}
 
 function Rating() {
+    console.log("Rating rendering")
     return (
         <div>
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-            <Star />
+            <Star/>
+            <Star/>
+            <Star/>
+            <Star/>
+            <Star/>
         </div>
     )
 }
 
 function Star() {
-return(
-    <div>star </div>
-
-)
+    console.log("Star rendering")
+    return (
+        <div>star </div>
+    )
 }
 
 function Accordion() {
-return(
-    <div>
-        <h3>Menu</h3>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-        </ul>
-    </div>
-)
+    console.log("Accordion rendering")
+    return (
+        <div>
+            <h3>Menu</h3>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    )
 }
 
 //function expression
