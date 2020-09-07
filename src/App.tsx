@@ -1,6 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+function hello() {
+    debugger;
+    alert("Hello it kamasutra")
+}
+
+//hello();
 
 //ето function declaration -спосіб створення функції
 function App() {
@@ -10,7 +16,10 @@ function App() {
 
     return (
         <div className="App">
-            <div>This is App component</div>
+            <div>This is App component
+            <Rating />
+            <Accordion />
+            </div>
         </div>
     );
 }
@@ -27,6 +36,18 @@ function Rating() {
     )
 }
 
+function Accordion() {
+return(
+    <div>
+        <h3>Menu</h3>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+)
+}
 
 //function expression
 const App2 = function () {
