@@ -14,9 +14,11 @@ function Accordion(props:AccordionPropsType) {
     )
 }
 
+type AccordionTitlePropsType = {
+    title: string
+}
 
-
-function AccordionTitle(props:any) {
+function AccordionTitle(props:AccordionTitlePropsType) {
     console.log("AccordionTitle rendering")
     return(
         <h3>{props.title}</h3>
