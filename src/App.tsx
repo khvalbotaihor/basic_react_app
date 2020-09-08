@@ -19,13 +19,13 @@ function App() {
     //здесь функция может делать штото полезное
     // в конце функция обязана вернуть JSX
 
-    let[ratingValue, setRaringValue]= useState<RatingValueType>(3);
+    let[ratingValue, setRatingValue]= useState<RatingValueType>(3);
 
     return (
         <div className="App">
             <div>
 
-                <Rating value={ratingValue} />
+                <Rating value={ratingValue} onClick={setRatingValue}/>
 {/*
                 <Rating value={0} />
                 <Rating value={1} />
