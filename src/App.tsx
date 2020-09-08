@@ -6,8 +6,8 @@ import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRa
 import Accordion from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 
-function sum(a:number,b:number) {
-    alert(a+b)
+function sum(a: number, b: number) {
+    alert(a + b)
 }
 
 /*sum(23,12);
@@ -19,14 +19,17 @@ function App() {
     //здесь функция может делать штото полезное
     // в конце функция обязана вернуть JSX
 
-    let[ratingValue, setRatingValue]= useState<RatingValueType>(3);
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(3);
+    let[accordionValue, setAccordionValue] = useState(false);
 
     return (
         <div className="App">
             <div>
 
+                <Accordion title={"Controlled accordion"} collapsed={accordionValue} onClick={()=>{setAccordionValue(!accordionValue)}}/>
+                <UncontrolledRating/>
                 <Rating value={ratingValue} onClick={setRatingValue}/>
-{/*
+                {/*
                 <Rating value={0} />
                 <Rating value={1} />
                 <Rating value={2} />
@@ -44,11 +47,11 @@ type PageTitlePropsType = {
     title: string
 }
 
-function PageTitle(props:PageTitlePropsType) {
+function PageTitle(props: PageTitlePropsType) {
     console.log("App Title rendering")
-return(
-    <h1>{props.title}</h1>
-)
+    return (
+        <h1>{props.title}</h1>
+    )
 }
 
 //function expression
