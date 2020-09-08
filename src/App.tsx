@@ -37,7 +37,12 @@ function App() {
         </div>
     );
 }
-function PageTitle(props:any) {
+
+type PageTitlePropsType = {
+    title: string
+}
+
+function PageTitle(props:PageTitlePropsType) {
     console.log("App Title rendering")
 return(
     <h1>{props.title}</h1>
