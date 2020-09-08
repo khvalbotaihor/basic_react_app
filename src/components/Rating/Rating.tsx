@@ -25,6 +25,10 @@ type StarPropsType ={
 
 function Star(props: StarPropsType) {
     console.log("Star rendering")
+    return (
+        <span>{props.selected ? <b>star </b> : "star "}</span>
+    )
+
 
     if(props.selected===true){
         return (
