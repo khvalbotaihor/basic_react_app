@@ -9,9 +9,6 @@ function UncontrolledAccordion(props:AccordionPropsType) {
     console.log("Accordion rendering")
 
     let[collapsed,setCollapsed]= useState<boolean>(false);
-// add useState and add onClick function
-
-    // delete buttons and click on title and use callback
 
         return (
             <div>

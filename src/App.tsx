@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import OnOff from "./components/OnOff/OnOff";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import Accordion from "./components/Accordion/Accordion";
-import {Rating} from "./components/Rating/Rating";
+import {Rating, RatingValueType} from "./components/Rating/Rating";
 
 function sum(a:number,b:number) {
     alert(a+b)
@@ -19,20 +19,13 @@ function App() {
     //здесь функция может делать штото полезное
     // в конце функция обязана вернуть JSX
 
+    let[ratingValue, setRaringValue]= useState<RatingValueType>(3);
+
     return (
         <div className="App">
-
-
-
-
-
             <div>
-                <OnOff />
 
-                <UncontrolledAccordion title={"Menu"} />
-                <Accordion title={"bibi"} collapsed={true} />
-                <UncontrolledRating />
-                <Rating value={4} />
+                <Rating value={ratingValue} />
 {/*
                 <Rating value={0} />
                 <Rating value={1} />

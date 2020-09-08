@@ -1,6 +1,8 @@
 import React from "react";
 import {isBoolean} from "util";
 
+export type RatingValueType = 0|1|2|3|4|5
+
 type RatingPropsType ={
     value: 0|1|2|3|4|5
 }
@@ -28,15 +30,4 @@ function Star(props: StarPropsType) {
     return (
         <span>{props.selected ? <b>star </b> : "star "}</span>
     )
-
-
-    if(props.selected===true){
-        return (
-            <span><b>star</b> </span>
-        )
-    }else {
-        return (
-            <span>star </span>
-        )
-    }
 }
