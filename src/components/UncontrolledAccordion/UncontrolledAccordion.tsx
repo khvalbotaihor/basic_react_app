@@ -9,7 +9,7 @@ function UncontrolledAccordion(props:AccordionPropsType) {
     console.log("Accordion rendering")
 
     const collapsed=true;
-
+// add useState and add onClick function
         return (
             <div>
                 <AccordionTitle title={props.title}/><button>Toggle</button>
