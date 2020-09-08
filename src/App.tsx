@@ -5,6 +5,7 @@ import UncontrolledAccordion from "./components/UncontrolledAccordion/Uncontroll
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import Accordion from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
+import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
 
 function sum(a: number, b: number) {
     alert(a + b)
@@ -21,14 +22,24 @@ function App() {
 
     let [ratingValue, setRatingValue] = useState<RatingValueType>(3);
     let[accordionValue, setAccordionValue] = useState(false);
+    let[on, setOn] = useState<boolean>(false);
 
     return (
         <div className="App">
             <div>
 
-                <Accordion title={"Controlled accordion"} collapsed={accordionValue} onClick={setAccordionValue}/>
+                <Accordion title={"Controlled accordion"}
+                           collapsed={accordionValue}
+                           onClick={setAccordionValue}/>
                 <UncontrolledRating/>
                 <Rating value={ratingValue} onClick={setRatingValue}/>
+
+                <hr />
+
+                <OnOff on={on} setOn={setOn}/>
+
+                <UncontrolledOnOff />
+
                 {/*
                 <Rating value={0} />
                 <Rating value={1} />
