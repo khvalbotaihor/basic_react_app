@@ -8,7 +8,7 @@ type AccordionPropsType = {
 function UncontrolledAccordion(props:AccordionPropsType) {
     console.log("Accordion rendering")
 
-    let[collapsed,setCollapsed]= useState(true);
+    let[collapsed,setCollapsed]= useState<boolean>(true);
 // add useState and add onClick function
         return (
             <div>

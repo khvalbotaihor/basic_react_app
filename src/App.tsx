@@ -4,6 +4,7 @@ import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 import OnOff from "./components/OnOff/OnOff";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 
 function sum(a:number,b:number) {
     alert(a+b)
@@ -28,6 +29,7 @@ function App() {
                 <UncontrolledAccordion title={"Menu"} />
                 <UncontrolledAccordion title={"Users"} />
 
+                <UncontrolledRating />
 {/*
                 <Rating value={0} />
                 <Rating value={1} />
