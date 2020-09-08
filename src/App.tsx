@@ -26,7 +26,7 @@ function App() {
         <div className="App">
             <div>
 
-                <Accordion title={"Controlled accordion"} collapsed={accordionValue} onClick={()=>{setAccordionValue(!accordionValue)}}/>
+                <Accordion title={"Controlled accordion"} collapsed={accordionValue} onClick={setAccordionValue}/>
                 <UncontrolledRating/>
                 <Rating value={ratingValue} onClick={setRatingValue}/>
                 {/*
