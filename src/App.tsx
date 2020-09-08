@@ -38,7 +38,7 @@ function App() {
 
                 <OnOff on={on} setOn={setOn}/>
 
-                <UncontrolledOnOff />
+                <UncontrolledOnOff onChange={setOn}/> {on.toString()}
 
                 {/*
                 <Rating value={0} />
