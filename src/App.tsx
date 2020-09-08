@@ -21,7 +21,7 @@ function App() {
         <div className="App">
             <div>
 
-                <Accordion title={"Menu"} collapsed={true}/>
+{/*                <Accordion title={"Menu"} collapsed={true}/>
                 <Accordion title={"Users"} collapsed={false}/>
 
 
@@ -30,11 +30,9 @@ function App() {
                 <Rating value={2} />
                 <Rating value={3} />
                 <Rating value={4} />
-                <Rating value={5} />
+                <Rating value={5} />*/}
 
-                <hr/>
-                <OnOff on={false}/>
-                <hr/>
+                <OnOff />
             </div>
         </div>
     );
