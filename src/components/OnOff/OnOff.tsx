@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 type OnOffPropsType = {
     //on: boolean
@@ -6,7 +6,7 @@ type OnOffPropsType = {
 
 function OnOff(props:OnOffPropsType) {
 
-    const on=false;
+    let[on, setOn] = useState(false);
 
     const OnStyle={
         width:"30px",
@@ -40,8 +40,10 @@ function OnOff(props:OnOffPropsType) {
 
 return(
     <div>
-        <div style={OnStyle} onClick={()=>{alert("ON")}}>On</div>
-        <div style={OffStyle} onClick={()=>{alert("OFF")}}>Off</div>
+        <div style={OnStyle} onClick={()=>{
+            setOn(!on)}}>On</div>
+        <div style={OffStyle} onClick={()=>{
+            setOn(!on)}}>Off</div>
         <div style={IndicatorStyle} onClick={()=>{}}></div>
     </div>
 )
