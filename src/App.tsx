@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
+import OnOff from "./components/OnOff/OnOff";
 
 function sum(a:number,b:number) {
     alert(a+b)
@@ -30,6 +31,10 @@ function App() {
                 <Rating value={3} />
                 <Rating value={4} />
                 <Rating value={5} />
+
+                <hr/>
+                <OnOff on={false}/>
+                <hr/>
             </div>
         </div>
     );
