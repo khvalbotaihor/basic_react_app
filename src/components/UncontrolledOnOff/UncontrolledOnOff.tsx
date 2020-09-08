@@ -51,7 +51,7 @@ return(
     <div>
         <div style={OnStyle} onClick={onClicked}>On</div>
         <div style={OffStyle} onClick={offClicked}>Off</div>
-        <div style={IndicatorStyle} onClick={()=>{}}></div>
+        <div style={IndicatorStyle}></div>
     </div>
 )
 }
