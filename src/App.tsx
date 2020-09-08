@@ -3,12 +3,12 @@ import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 
-function hello() {
-    debugger;
-    alert("Hello it kamasutra")
+function sum(a:number,b:number) {
+    alert(a+b)
 }
 
-//hello();
+/*sum(23,12);
+sum(100,300)*/
 
 //ето function declaration -спосіб створення функції
 function App() {
