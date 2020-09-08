@@ -24,7 +24,7 @@ function App() {
                 <div>Article 1</div>
 
                 <Rating value={3}/>
-                <Accordion/>
+                <Accordion title={"Menu"}/>
                 <div>Article2</div>
                 <Rating value={0}/>
                 <Rating value={1}/>
@@ -37,10 +37,9 @@ function App() {
     );
 }
 function PageTitle(props:any) {
-    debugger
     console.log("App Title rendering")
 return(
-    <h1>This is App component</h1>
+    <h1>{props.title}</h1>
 )
 }
 
