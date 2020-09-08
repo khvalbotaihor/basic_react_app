@@ -40,17 +40,17 @@ function UncontrolledOnOff(props:OnOffPropsType) {
         backgroundColor: on ? "green" : "red"
     }
 
-
-
+const onClicked=()=>{
+    props.onChange(true)
+    setOn(true)}
+const offClicked =()=>{
+    props.onChange(false)
+    setOn(false)}
 
 return(
     <div>
-        <div style={OnStyle} onClick={()=>{
-            props.onChange(true)
-            setOn(true)}}>On</div>
-        <div style={OffStyle} onClick={()=>{
-            props.onChange(false)
-            setOn(false)}}>Off</div>
+        <div style={OnStyle} onClick={onClicked}>On</div>
+        <div style={OffStyle} onClick={offClicked}>Off</div>
         <div style={IndicatorStyle} onClick={()=>{}}></div>
     </div>
 )
