@@ -9,6 +9,8 @@ export function UncontrolledRating(props:RatingPropsType) {
     console.log("Rating rendering")
 let[value, setValue] = useState<number>(0);
 
+    // delete buttons and make clicks on stars
+
     return (
         <div>
             <Star selected={value>0}/><button onClick={()=>{setValue(1)}}>1</button>
@@ -27,13 +29,7 @@ type StarPropsType ={
 function Star(props: StarPropsType) {
     console.log("Star rendering")
 
-    if(props.selected===true){
-        return (
-            <span><b>star</b> </span>
-        )
-    }else {
-        return (
-            <span>star </span>
-        )
-    }
+    return (
+        <span>{props.selected ? <b>star</b> : "star" }</span>
+    )
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import Accordion from "./components/Accordion/Accordion";
-import {Rating} from "./components/Rating/Rating";
 import OnOff from "./components/OnOff/OnOff";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
+import Accordion from "./components/Accordion/Accordion";
+import {Rating} from "./components/Rating/Rating";
 
 function sum(a:number,b:number) {
     alert(a+b)
@@ -21,15 +21,18 @@ function App() {
 
     return (
         <div className="App">
+
+
+
+
+
             <div>
-                <OnOff />
-                <OnOff />
                 <OnOff />
 
                 <UncontrolledAccordion title={"Menu"} />
-                <UncontrolledAccordion title={"Users"} />
-
+                <Accordion title={"bibi"} collapsed={true} />
                 <UncontrolledRating />
+                <Rating value={4} />
 {/*
                 <Rating value={0} />
                 <Rating value={1} />

@@ -8,8 +8,11 @@ type AccordionPropsType = {
 function UncontrolledAccordion(props:AccordionPropsType) {
     console.log("Accordion rendering")
 
-    let[collapsed,setCollapsed]= useState<boolean>(true);
+    let[collapsed,setCollapsed]= useState<boolean>(false);
 // add useState and add onClick function
+
+    // delete buttons and click on title and use callback
+
         return (
             <div>
                 <AccordionTitle title={props.title}/><button onClick={()=>{setCollapsed(!collapsed)}}>Toggle</button>
