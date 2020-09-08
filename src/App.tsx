@@ -3,6 +3,7 @@ import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 import OnOff from "./components/OnOff/OnOff";
+import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 
 function sum(a:number,b:number) {
     alert(a+b)
@@ -20,11 +21,14 @@ function App() {
     return (
         <div className="App">
             <div>
+                <OnOff />
+                <OnOff />
+                <OnOff />
 
-{/*                <Accordion title={"Menu"} collapsed={true}/>
-                <Accordion title={"Users"} collapsed={false}/>
+                <UncontrolledAccordion title={"Menu"} />
+                <UncontrolledAccordion title={"Users"} />
 
-
+{/*
                 <Rating value={0} />
                 <Rating value={1} />
                 <Rating value={2} />
@@ -32,7 +36,7 @@ function App() {
                 <Rating value={4} />
                 <Rating value={5} />*/}
 
-                <OnOff />
+
             </div>
         </div>
     );

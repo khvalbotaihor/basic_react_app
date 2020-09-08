@@ -5,8 +5,11 @@ type OnOffPropsType = {
 }
 
 function OnOff(props:OnOffPropsType) {
+    console.log("OnOffRendering")
 
     let[on, setOn] = useState(false);
+
+    console.log("On: " + on)
 
     const OnStyle={
         width:"30px",
@@ -41,9 +44,9 @@ function OnOff(props:OnOffPropsType) {
 return(
     <div>
         <div style={OnStyle} onClick={()=>{
-            setOn(!on)}}>On</div>
+            setOn(true)}}>On</div>
         <div style={OffStyle} onClick={()=>{
-            setOn(!on)}}>Off</div>
+            setOn(false)}}>Off</div>
         <div style={IndicatorStyle} onClick={()=>{}}></div>
     </div>
 )
