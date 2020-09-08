@@ -19,8 +19,10 @@ function App() {
     return (
         <div className="App">
             <div>
-                <AppTitle />
+                <PageTitle title={"This is App component"}/>
+                <PageTitle title={"My friends"}/>
                 <div>Article 1</div>
+
                 <Rating value={3}/>
                 <Accordion/>
                 <div>Article2</div>
@@ -34,10 +36,11 @@ function App() {
         </div>
     );
 }
-function AppTitle() {
+function PageTitle(props:any) {
+    debugger
     console.log("App Title rendering")
 return(
-    <>This is App component</>
+    <h1>This is App component</h1>
 )
 }
 
