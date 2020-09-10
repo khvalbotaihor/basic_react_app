@@ -6,7 +6,7 @@ type AccordionPropsType = {
     onClick: (value:boolean)=> void
 }
 
-function Accordion(props:AccordionPropsType) {
+export function Accordion(props:AccordionPropsType) {
     console.log("Accordion rendering")
 
         return (
@@ -43,5 +43,3 @@ function AccordionBody() {
         </ul>
     )
 }
-
-export default Accordion;
