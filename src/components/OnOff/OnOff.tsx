@@ -5,7 +5,7 @@ type OnOffPropsType = {
     setOn: (value:boolean)=> void
 }
 
-function OnOff(props:OnOffPropsType) {
+export function OnOff(props:OnOffPropsType) {
     console.log("OnOffRendering")
 
     const OnStyle={
@@ -48,5 +48,3 @@ return(
     </div>
 )
 }
-
-export default OnOff;
