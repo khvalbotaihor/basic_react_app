@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
 import './App.css';
-import OnOff from "./components/OnOff/OnOff";
-import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
-import Accordion from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
+import {Accordion} from "./components/Accordion/Accordion";
+import {OnOff} from "./components/OnOff/OnOff";
 
 function sum(a: number, b: number) {
     alert(a + b)
@@ -20,7 +19,7 @@ function App() {
     //здесь функция может делать штото полезное
     // в конце функция обязана вернуть JSX
 
-    let [ratingValue, setRatingValue] = useState<RatingValueType>(3);
+    let[ratingValue, setRatingValue] = useState<RatingValueType>(3);
     let[accordionValue, setAccordionValue] = useState(false);
     let[on, setOn] = useState<boolean>(false);
 
