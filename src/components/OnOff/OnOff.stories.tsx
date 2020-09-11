@@ -1,57 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState} from "react";
 import {OnOff} from "./OnOff";
-import {Rating, RatingValueType} from "../Rating/Rating";
 import {action} from "@storybook/addon-actions";
 
 export default {
-    title: 'OnOff stories',
+    title: "OnOff component",
     component: OnOff
 }
-const callback = action("on or off clicked")
 
-export const OnMode = () => <OnOff on={true}  setOn={callback}/>
-export const OffMode = () => <OnOff on={false}  setOn={callback} />
-export const ModeChanging = () => {
-    const [value, setValue] = useState<boolean>(true);
-    return <OnOff on={value} setOn={setValue} />
+const callback = "Button clicked"
+
+export const SwitchedOnButton = () => <OnOff on={true} setOn={action(callback)} />
+export const SwitchedOffButton = () => <OnOff on={false} setOn={action(callback)} />
+export const SwitchMode = () => {
+    const[on, setOn] = useState(true);
+    return <OnOff on={on} setOn={setOn} />
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
