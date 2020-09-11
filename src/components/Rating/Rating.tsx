@@ -1,5 +1,4 @@
 import React from "react";
-import {isBoolean} from "util";
 
 export type RatingValueType = 0|1|2|3|4|5
 
