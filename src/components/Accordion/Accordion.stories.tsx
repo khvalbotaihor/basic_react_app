@@ -1,57 +1,17 @@
-import React, {useState} from 'react';
-import {action} from "@storybook/addon-actions";
+import React, {useState} from "react";
 import {Accordion} from "./Accordion";
-
+import {action} from "@storybook/addon-actions";
 
 export default {
-    title: 'Accordion stories',
+    title: "Accordion component",
     component: Accordion
 }
-const callback = action("accordion mode change event fired")
 
-export const MenuCollapsedMode = () => <Accordion title={"Menu"} collapsed={false} onClick={callback} />
-export const UsersUncollapsedMode = () => <Accordion title={"Users"} collapsed={true} onClick={callback} />
-export const ModeChanging = () => {
-    const [value, setValue] = useState<boolean>(false);
-    return <Accordion title={"Users"} collapsed={value} onClick={setValue} />
+const callback = "Uncontrolled accordion";
+
+export const ExpandedAccordion = () => <Accordion title={"Uncontrolled accordion"} collapsed={false} onClick={action(callback)} />
+export const CollapsedAccordion = () => <Accordion title={"Collapsed accordion"} collapsed={true} onClick={action(callback)} />
+export const CollapseMode = () => {
+    const [collapsed, setCollapsed] = useState(false);
+    return <Accordion title={"Controlled accordion"} collapsed={collapsed} onClick={setCollapsed} />
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
