@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 type OnOffPropsType = {
     onChange : (on:boolean)=> void
-    defaultOn?: boolean
+    defaultOn? : boolean
 }
 
 function UncontrolledOnOff(props:OnOffPropsType) {

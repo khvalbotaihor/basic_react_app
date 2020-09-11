@@ -3,13 +3,13 @@ import {UncontrolledRating} from "./UncontrolledRating";
 import {action} from "@storybook/addon-actions";
 
 export default {
-    title: 'Uncontrolled Rating',
+    title: "Uncontrolled Rating",
     component: UncontrolledRating
 }
 
-const callback = action("Rating changed inside component")
+const callback = action("Rating value was clicked");
 
-export const EmptyRating = () => <UncontrolledRating defaultValue={0} onChange={callback}/>
+export const EmptyRating = () => <UncontrolledRating defaultValue={0}  onChange={callback}/>
 export const Rating1 = () => <UncontrolledRating defaultValue={1} onChange={callback}/>
 export const Rating2 = () => <UncontrolledRating defaultValue={2} onChange={callback}/>
 export const Rating3 = () => <UncontrolledRating defaultValue={3} onChange={callback}/>

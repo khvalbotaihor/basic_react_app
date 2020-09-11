@@ -7,8 +7,7 @@ export default {
     component: UncontrolledOnOff
 }
 
-const callback= "Clisked OnOff component";
+const callback = action("Button was clicked")
 
-export const OnMode = () =>  <UncontrolledOnOff defaultOn={true} onChange={action(callback)} />
-export const OffMode = () =>  <UncontrolledOnOff defaultOn={false} onChange={action(callback)} />
-export const BugMode = () =>  <div>Unsync when change default value when already rendered</div>
+export const OnSwitched = () => <UncontrolledOnOff defaultOn={true} onChange={callback} />
+export const OffSwitched = () => <UncontrolledOnOff defaultOn={false} onChange={callback} />
