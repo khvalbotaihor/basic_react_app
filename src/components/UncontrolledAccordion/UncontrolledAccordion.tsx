@@ -2,8 +2,9 @@ import React, {useState} from "react";
 
 type AccordionPropsType = {
     title:string
-    defaultValue: boolean
     //collapsed: boolean
+    defaultValue?: boolean
+    onClick? : ()=> void
 }
 
 function UncontrolledAccordion(props:AccordionPropsType) {

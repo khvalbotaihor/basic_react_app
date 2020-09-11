@@ -11,3 +11,4 @@ const callback = action("Button was clicked")
 
 export const OnSwitched = () => <UncontrolledOnOff defaultOn={true} onChange={callback} />
 export const OffSwitched = () => <UncontrolledOnOff defaultOn={false} onChange={callback} />
+export const BugEffect = () => <div>Unsync when change efault value when already entered</div>
