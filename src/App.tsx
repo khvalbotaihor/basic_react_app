@@ -5,6 +5,7 @@ import {Rating, RatingValueType} from "./components/Rating/Rating";
 import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
 import {Accordion} from "./components/Accordion/Accordion";
 import {OnOff} from "./components/OnOff/OnOff";
+import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 
 function sum(a: number, b: number) {
     alert(a + b)
@@ -30,22 +31,13 @@ function App() {
                 <Accordion title={"Controlled accordion"}
                            collapsed={accordionValue}
                            onClick={setAccordionValue}/>
-                <UncontrolledRating/>
+                <OnOff on={on} setOn={setOn}/>
                 <Rating value={ratingValue} onClick={setRatingValue}/>
 
-                <hr />
-
-                <OnOff on={on} setOn={setOn}/>
-
+                <UncontrolledAccordion title={"Menu"} />
                 <UncontrolledOnOff onChange={setOn}/> {on.toString()}
+                <UncontrolledRating/>
 
-                {/*
-                <Rating value={0} />
-                <Rating value={1} />
-                <Rating value={2} />
-                <Rating value={3} />
-                <Rating value={4} />
-                <Rating value={5} />*/}
 
 
             </div>
