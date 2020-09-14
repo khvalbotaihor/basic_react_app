@@ -7,11 +7,14 @@ export default {
     component: OnOff
 }
 
-const callback = "Button clicked"
+const callback = action("OnOff component button was clicked")
 
-export const SwitchedOnButton = () => <OnOff on={true} setOn={action(callback)} />
-export const SwitchedOffButton = () => <OnOff on={false} setOn={action(callback)} />
-export const SwitchMode = () => {
-    const[on, setOn] = useState(true);
-    return <OnOff on={on} setOn={setOn} />
+export const SwitchedOn = () => <OnOff on={true} setOn={callback} />
+export const SwitchedOff = () => <OnOff on={false} setOn={callback} />
+export const SwitchMode = () =>
+{
+    const[OnOffValue, setOnOffValue] = useState(true);
+    return <OnOff on={OnOffValue} setOn={setOnOffValue} />
 }
+
+
