@@ -3,21 +3,11 @@ import UncontrolledAccordion from "./UncontrolledAccordion";
 import {action} from "@storybook/addon-actions";
 
 export default {
-    title: "Uncontrolled Accordion",
+    title: "Uncontrolled Accrodion component",
     component: UncontrolledAccordion
 }
 
-const callbak = action("Title was clicked")
+const callback = action("Accordion title was clicked");
 
-export const OnMode = () =>
-    <UncontrolledAccordion
-        defaultValue= {false}
-        title={"Uncontrolled accordion title"}
-    onClick={callbak}
-    />
-export const OffMode = () =>
-    <UncontrolledAccordion
-        defaultValue= {true}
-        title={"Uncontrolled accordion title"}
-        onClick={callbak}
-    />
+export const ExpandedAccordion = () => <UncontrolledAccordion collapsed={false} title={"Expanded Accordion"} onChange={callback}/>
+export const CollapsedAccordion = () => <UncontrolledAccordion collapsed={true} title={"Collapsed Accordion"} onChange={callback}/>
