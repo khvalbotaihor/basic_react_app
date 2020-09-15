@@ -11,3 +11,5 @@ const callback = action("Button was clicked");
 
 export const DefaultOn = () => <UncontrolledOnOff defaultValue={true} onChange={callback} />
 export const DefaultOff = () => <UncontrolledOnOff defaultValue={false} onChange={callback} />
+export const BugMode = () => <div>Unsync when change defaultValue when already rendered</div>
+
