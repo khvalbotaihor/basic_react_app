@@ -1,28 +1,38 @@
-import React, {useState} from 'react';
-import {OnOff} from "../components/OnOff/OnOff";
-// also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-
+import React, {ChangeEvent, useRef, useState} from "react";
 
 export default {
-  title: 'input',
-  //component: OnOff
+    title:"input"
+}
+
+export const DefaultInput = () => <input/>
+export const InputWithStaticValue = () => <input value={"It's a statis imput that can't be changed"} />
+
+export const InputWithLocalState = () => {
+const [inputValue, setInoutValue] = useState("");
+const result = (el:ChangeEvent<HTMLInputElement>)=>{
+    const enteredValue = el.currentTarget.value;
+    setInoutValue(enteredValue);
 };
-
-export const UncontrolledInput = () => <input      />
-
-export const TrackedValueOfUncontrolledInput = () => {
-  const [value, setValue] = useState("");
-  return <><input onChange={(event)=>{    const actualValue = event.currentTarget.value;  setValue(actualValue); }}     /> - {value}  </>
-}
-export const GetValueOfUncontrolledInputByButtonPress = () => {
-  const [value, setValue] = useState("");
-  return <><input    /> <button onClick={()=> {setValue("yo")}}>Save</button> actual value: {value}  </>
+    return (
+        <><input onChange={result}/>
+        the value is entered: {inputValue}
+        </>
+    )
 }
 
+export const InputWithRef = () => {
+const [inputValue, setInoutValue] = useState("");
+const refValue = useRef<HTMLInputElement>(null);
+const result = ()=>{
+    const enteredValue = refValue.current as HTMLInputElement;
+    setInoutValue(enteredValue.value)
+}
 
-
-export const ControlledInputWithFixedValue = () => <input value={"it-incubator.by"}     />
-
-
-
+    return (
+        <><input ref={refValue} />
+        <button onClick={result}>Result</button>
+            - {inputValue}
+        </>
+    )
+}
 
