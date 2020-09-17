@@ -1,4 +1,5 @@
 import React, {ChangeEvent, useRef, useState} from "react";
+import {action} from "@storybook/addon-actions";
 
 export default {
     title: "input"
@@ -52,10 +53,10 @@ export const InputWithRefs = () => {
 
 export const ControlledInput = () => {
     const [ControlledValue, setControlledValue] = useState("");
-const onChange = (el: ChangeEvent<HTMLInputElement>)=> {
-    const enteredValue = el.currentTarget.value;
-    setControlledValue(enteredValue);
-};
+    const onChange = (el: ChangeEvent<HTMLInputElement>) => {
+        const enteredValue = el.currentTarget.value;
+        setControlledValue(enteredValue);
+    };
     return (
         <input
             value={ControlledValue}
@@ -64,7 +65,19 @@ const onChange = (el: ChangeEvent<HTMLInputElement>)=> {
     )
 }
 
+export const ControlledCheckbox = () => {
 
+    const [ControlledValue, setControlledValue] = useState(true);
+    const onChange = (el: ChangeEvent<HTMLInputElement>) => {
+        const enteredValue = el.currentTarget.checked;
+        setControlledValue(enteredValue);
+    }
+
+    return (
+
+        <input type={"checkbox"} checked={ControlledValue} onChange={onChange}/>
+    )
+}
 
 
 
