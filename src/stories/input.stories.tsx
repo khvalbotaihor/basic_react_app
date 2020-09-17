@@ -1,6 +1,4 @@
 import React, {ChangeEvent, useRef, useState} from "react";
-import {log} from "util";
-import {action} from "@storybook/addon-actions";
 
 export default {
     title: "input"
@@ -51,86 +49,20 @@ export const InputWithRefs = () => {
     )
 }
 
-/*
-export const ControlledInput = () => {
-    const [parentValue, setParentValue] = useState("");
-const onChange = (e:ChangeEvent<HTMLInputElement>)=>{
-    const el = e.currentTarget.value;
-    console.log(el);
-   setParentValue(el);
-}
-    return <input value={parentValue} onChange={ onChange   }/>
-}
-
-
-export const ControlledCheckbox = () => {
-    const [parentValue, setParentValue] = useState(true);
-    const onChange = (e:ChangeEvent<HTMLInputElement>)=>{
-        const el = e.currentTarget.checked;
-        setParentValue(el);
-    }
-
-    return <input type={"checkbox"} checked={parentValue} onChange={ onChange  }/>
-}
-
-
-export const ControlledSelect = () => {
-    const [parentValue, setParentValue] = useState<string | undefined>("2");
-    const onChange = (e:ChangeEvent<HTMLSelectElement>)=>{
-        const el = e.currentTarget.value;
-        setParentValue(el);
-    }
-
-    return <select value={parentValue} onChange={onChange}>
-        <option value={1}>none</option>
-        <option value={2}>Minsk</option>
-        <option value={3}>Kiev</option>
-    </select>
-}
-
-*/
-
 
 export const ControlledInput = () => {
-    const [controlledValue, setControlledValue] = useState("");
-    const onChange = (el: ChangeEvent<HTMLInputElement>) => {
-        const enteredValue = el.currentTarget.value;
-        setControlledValue(enteredValue);
-    }
+    const [ControlledValue, setControlledValue] = useState("");
+const onChange = (el: ChangeEvent<HTMLInputElement>)=> {
+    const enteredValue = el.currentTarget.value;
+    setControlledValue(enteredValue);
+};
     return (
         <input
-            value={controlledValue}
+            value={ControlledValue}
             onChange={onChange}
         />
     )
 }
-
-export const ControlledCheckbox = () => {
-    const [checkValue, setCheckValue] = useState(true);
-    return(
-        <input
-            type="checkbox"
-        checked={checkValue}
-            onChange={(el)=>{
-                const checkValue = el.currentTarget.checked;
-                setCheckValue(checkValue);
-            }}
-        />
-    )
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
