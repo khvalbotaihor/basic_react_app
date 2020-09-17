@@ -79,6 +79,22 @@ export const ControlledCheckbox = () => {
     )
 }
 
+export const controlledSel = () => {
+const[selectValue, setSelectValue] = useState();
+ const onChange = (el:ChangeEvent<HTMLSelectElement>)=>{
+             const selectedOption = el.currentTarget.value;
+           setSelectValue(selectedOption);
+         }
+
+    return(
+        <select value={selectValue} onChange={onChange}>
+            <option >None</option>
+            <option value="1">Moskva</option>
+            <option value="2">Minsk</option>
+            <option value="3">Kiev</option>
+        </select>
+    )
+}
 
 
 
