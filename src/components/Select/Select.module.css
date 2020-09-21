@@ -1,0 +1,22 @@
+.select span.main{
+border: 1px solid black;
+    display: inline-block;
+    min-height: 20px;
+    min-width: 40px;
+
+}
+.items{
+    /*display: none;
+    */
+
+    border: 1px solid red;
+    padding: 5px;
+    position: absolute;
+}
+.select.active .items{
+    display: block;
+}
+.item.selected{
+    background-color: #1ea7fd;
+    color: white;
+}
