@@ -1,5 +1,6 @@
 import React, {useMemo, useState} from "react";
 import {Select} from "../Select/Select";
+import {v1} from "uuid";
 
 
 export default {
@@ -7,20 +8,32 @@ export default {
     component: Select
 }
 
-const cities = [
-    {value: "1", title: "Minsk", country: "Russia", population: 2000000},
-    {value: "2", title: "Kiev", country: "Belarus", population: 3000000},
-    {value: "3", title: "Moskov", country: "Ukraine", population: 10000000},
-    {value: "4", title: "Lviv", country: "Belarus", population: 10000000},
-    {value: "5", title: "Kazan", country: "Ukraine", population: 10000000},
-]
 
 export const WithValue = () => {
+    let [cities, setCities] = useState([
+        {value: "1", title: "Minsk", country: "Russia", population: 2000000},
+        {value: "2", title: "Kiev", country: "Belarus", population: 3000000},
+        {value: "3", title: "Moskov", country: "Ukraine", population: 10000000},
+        {value: "4", title: "Lviv", country: "Belarus", population: 10000000},
+        {value: "5", title: "Kazan", country: "Ukraine", population: 10000000},
+    ]);
+
+
     const [value1, setValue1] = useState("1");
     const [value2, setValue2] = useState("1");
     const [value3, setValue3] = useState("1");
 
     const [counter, setCounter] = useState(0);
+    const [citiesInput, setCitiesInput] = useState("");
+
+    const addNewCity = () => {
+        const newCitiesList = [...cities, {value: v1().toString(), title: citiesInput, country: "Belarus", population: 1000000}];
+        setCities(newCitiesList)
+    };
+
+    /*
+        const addNewCity = cities.push({value: "45", title: citiesInput, country: "Belarus", population: 1000000});
+    */
 
     const CitiesWithMStarts = useMemo(() => {
         let city = cities.filter(c => c.title.toLowerCase().indexOf("m") > -1);
@@ -76,9 +89,16 @@ export const WithValue = () => {
             console.log("Counter" + " " + counter)
         }}>Increase counter
         </button>
-
-
-
+        <div></div>
+        <input value={citiesInput} onChange={(e) => {
+            setCitiesInput(e.currentTarget.value)
+            console.log(citiesInput);
+        }}/>
+        <button onClick={() => {
+            addNewCity()
+            console.log(cities)
+        }}>Add new city
+        </button>
 
 
     </>
