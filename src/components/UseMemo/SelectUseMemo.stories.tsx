@@ -39,7 +39,6 @@ export const WithValue = () => {
         let city = cities.filter(c => c.title.toLowerCase().indexOf("m") > -1);
         console.log("Cities that starts from M are rendering")
         console.log(cities)
-        debugger;
         return city
     }, [cities])
 
@@ -47,7 +46,6 @@ export const WithValue = () => {
         let city = cities.filter(c => c.country === "Belarus")
         console.log("Cities that are from Belarus are rendering")
         console.log(cities)
-        debugger;
         return city
     }, [cities])
 
@@ -56,7 +54,6 @@ export const WithValue = () => {
         let city = cities.filter(c => c.population > 2000000)
         console.log("Cities that have high population are rendering")
         console.log(cities)
-        debugger;
         return city
 
     }, [cities])
@@ -89,7 +86,7 @@ export const WithValue = () => {
             console.log("Counter" + " " + counter)
         }}>Increase counter
         </button>
-        <div></div>
+        <div style={{height: "30px"}}></div>
         <input value={citiesInput} onChange={(e) => {
             setCitiesInput(e.currentTarget.value)
             console.log(citiesInput);
