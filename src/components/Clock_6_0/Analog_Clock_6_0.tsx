@@ -1,8 +1,9 @@
 import React from "react";
-import {ClockPropsType} from "./Clock_5_0";
-import styles from './Analog_Clock.module.css'
+import {ClockType} from "./Clock_6_0";
+import styles from "./Analog_Clock.module.css"
 
-export const AnalogClock: React.FC<ClockPropsType> = (props) => {
+export const AnalogClock: React.FC<ClockType> = (props) => {
+
 
     const secondsStyle = {
         transform: `rotate(${props.date.getSeconds() * 6}deg)`
@@ -16,6 +17,8 @@ export const AnalogClock: React.FC<ClockPropsType> = (props) => {
 
     return <>
 
+
+
         <div className={styles.clock}>
             <div className={styles["analog-clock"]}>
                 <div className={`${styles.dial} ${styles.seconds}`} style={secondsStyle} />
@@ -25,5 +28,9 @@ export const AnalogClock: React.FC<ClockPropsType> = (props) => {
         </div>
 
 
-    </>
+
+
+
+
+        </>
 }
