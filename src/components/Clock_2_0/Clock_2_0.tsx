@@ -15,11 +15,15 @@ export const Clock_2_0: React.FC<PropsType> = () => {
         },1000)
     },[])
 
+    const fullHours = date.getHours()<10 ? "0"+date.getHours() : date.getHours()
+    const fullMinutes = date.getMinutes()<10 ? "0"+date.getMinutes() : date.getMinutes()
+    const fullSeconds = date.getSeconds()<10 ? "0"+date.getSeconds() : date.getSeconds()
+
     return <div>
-        <span>{date.getHours()}</span>
+        <span>{fullHours}</span>
         :
-        <span>{date.getMinutes()}</span>
+        <span>{fullMinutes}</span>
         :
-        <span>{date.getSeconds()}</span>
+        <span>{fullSeconds}</span>
     </div>
 }
