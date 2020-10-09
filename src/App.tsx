@@ -28,15 +28,21 @@ function App() {
         <div className="App">
             <div>
 
-                <Accordion title={"Controlled accordion"}
+
+
+                <UncontrolledAccordion title={"Menu"} />
+
+
+
+
+
+{/*                <Accordion title={"Controlled accordion"}
                            collapsed={accordionValue}
                            onClick={setAccordionValue}/>
                 <OnOff on={on} setOn={setOn}/>
                 <Rating value={ratingValue} onClick={setRatingValue}/>
-
-                <UncontrolledAccordion title={"Menu"} />
-                <UncontrolledOnOff onChange={setOn}/> {on.toString()}
-                <UncontrolledRating onChange={()=>{}}/>
+                <UncontrolledOnOff defaultOn={true} onChange={setOn}/> {on.toString()}
+                <UncontrolledRating onChange={()=>{}}/>*/}
 
 
 

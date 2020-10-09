@@ -54,12 +54,12 @@ export const SetTimeoutExample = () => {
 
     useEffect(() => {
 
-                setTimeout(()=>{
+/*                setTimeout(()=>{
                     console.log("setTimeout is rendering")
                     setHours(new Date().getHours())
                     setMinutes(new Date().getMinutes())
                     setSeconds(new Date().getSeconds())
-                }, 1000)
+                }, 1000)*/
 /*        setInterval(() => {
             console.log("setTimeout is rendering " + counter)
             setCounter((state)=> state+1)

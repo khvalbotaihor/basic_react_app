@@ -11,28 +11,20 @@ export const SetTimeOutExample = () => {
     console.log("SetTimeOut component is rendering")
 
     useEffect(()=>{
+/*
+        setInterval(()=>{
+            console.log("tick: " + counter)
+            setCounter(state=> state+1)
+        },1000)*/
 
-        console.log("useEffect is rendering")
-    })
+    },[])
 
-    setTimeout(()=>{
-        debugger;
-        document.title = counter.toString()
 
-    },1000)
 
 
     return <>
-        Hello, {counter} {fake}
+        Hello,counter: {counter} - fake: {fake}
 
-        <button onClick={() => {
-            setFake(fake + 1)
-        }}>fake+
-        </button>
-        <button onClick={() => {
-            setCounter(counter + 1)
-        }}>counter+
-        </button>
 
     </>
 }

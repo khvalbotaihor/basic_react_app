@@ -9,21 +9,24 @@ export const Clock_2_0: React.FC<PropsType> = () => {
 
 
     useEffect(()=>{
-        setInterval(()=>{
+       const intervalID = setInterval(()=>{
+            console.log("tick")
             setDate(new Date())
 
         },1000)
+
+        return ()=>{
+            clearInterval(intervalID)
+        }
     },[])
 
-    const fullHours = date.getHours()<10 ? "0"+date.getHours() : date.getHours()
-    const fullMinutes = date.getMinutes()<10 ? "0"+date.getMinutes() : date.getMinutes()
-    const fullSeconds = date.getSeconds()<10 ? "0"+date.getSeconds() : date.getSeconds()
+    const getFullView = (num:number) => num<10 ? "0"+num : num
 
     return <div>
-        <span>{fullHours}</span>
+        <span>{getFullView(date.getHours())}</span>
         :
-        <span>{fullMinutes}</span>
+        <span>{getFullView(date.getMinutes())}</span>
         :
-        <span>{fullSeconds}</span>
+        <span>{getFullView(date.getSeconds())}</span>
     </div>
 }

@@ -16,12 +16,13 @@ export const WithValue = () => {
             value={value}
             onChange={setValue}
             items={
-                [{value: "1", title: "Minsk"},
+                [
+                    {value: "1", title: "Minsk"},
                     {value: "2", title: "Kiev"},
                     {value: "3", title: "Moskov"},
                 ]
-            }/>
-
+            }
+        />
     </>
 }
 
@@ -34,11 +35,12 @@ export const WithoutValue = () => {
             onChange={setValue}
             value={value}
             items={
-                [{value: "1", title: "Minsk"},
+                [
+                    {value: "1", title: "Minsk"},
                     {value: "2", title: "Kiev"},
                     {value: "3", title: "Moskov"},
                 ]
-            }/>
-
+            }
+        />
     </>
 }

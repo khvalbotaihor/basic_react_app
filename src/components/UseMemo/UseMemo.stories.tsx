@@ -1,53 +1,52 @@
 import React, {useMemo, useState} from "react";
+import {log} from "util";
 
 export default {
     title: "Use Memo"
 }
 
-export const DifficultCountingExample = () => {
+export const ComponentWithReactMemo = () => {
+const [a,setA] = useState(0);
+const [b,setB] = useState(0);
 
-    const [a, setA] = useState<number>(0);
-    const [b, setB] = useState<number>(0);
+let resultA = 1;
+let resultB = 1;
 
-    let resultA = 1;
-    let resultB = 1;
-
-    resultA = useMemo(() => {
-
-        let tempResultA = 1
-
-        for (let i = 1; i <= a; i++) {
-            let fake = 0
-            while (fake < 100000000) {
-                fake++;
-                const fakeValue = Math.random();
-            }
-            resultA = resultA * i;
+resultA= useMemo(()=>{
+let Result= 1;
+    for (let i = 1; i<= a; i++){
+        let fake=1;
+        while (fake<100){
+            fake=fake+1;
+            console.log("fake equals:" + i + "___" +fake)
         }
-        return resultA;
-
-    }, [a])
-
-
-    for (let i = 1; i <= b; i++) {
-        resultB = resultB * i;
+        console.log("A is calculated")
+        Result=Result *i;
     }
 
+    return Result
+},[a])
+
+
+resultB= useMemo(()=>{
+let Result= 1;
+    for (let i = 1; i<= b; i++){
+        console.log("B is calculated")
+        Result=Result *i;
+    }
+
+    return Result
+},[b])
+
     return <>
-        <input value={a} onChange={(e) => {
-            setA(Number(e.currentTarget.value))
-        }}/>
-        <input value={b} onChange={(e) => {
-            setB(+e.currentTarget.value)
-        }}/>
-        <hr/>
-        <div>Result for a: {resultA}</div>
-        <div>Result for b: {resultB}</div>
-
-
+        <input value={a} onChange={(e)=>{setA(+e.currentTarget.value)}}/>
+        <input value={b} onChange={(e)=>{setB(Number(e.currentTarget.value))}}/>
+        <div>The result of A equals: {resultA}</div>
+        <div>The result of B equals: {resultB}</div>
+    
     </>
-
 }
+
 
 
 const Users = (props: { users: Array<string> }) => {
@@ -56,28 +55,34 @@ const Users = (props: { users: Array<string> }) => {
 }
 const UsersRM = React.memo(Users);
 
-export const HelpsForReactMemoExample = () => {
-    console.log("HelpsForReactMemoExample rendering");
+export const ComponetWithReactMemoandUseMemo = () => {
 
-    const [usersList, setUsersList] = useState<Array<string>>(["Dimich", "Valera", "Artem", "Katya"]);
+    const [usersList, setUsersList] = useState<Array<string>>(["Carlo", "Vargas", "Lui"]);
     const [number, setNumber] = useState<number>(0);
 
-    const newArray = useMemo(() => {
-        const newArray = usersList.filter(u => u.toLowerCase().indexOf("a") > -1);
-    return newArray;
-}, [usersList])
-
     const addUser = () => {
-        const newUsers = [...usersList, "Sveta" + new Date().getTime()];
+        const newUsers = [...usersList, "Vika" + new Date().getTime()];
         setUsersList(newUsers);
     }
 
-return <>
-    <button onClick={() => {        setNumber(number + 1)    }}>+    </button>
-    <button onClick={() => {        addUser()    }}>add user    </button>
+    const users = useMemo(()=>{
+        const user = usersList.filter(u => u.toLowerCase().indexOf("a") > -1)
+
+        return user
+    },[usersList])
 
 
-    {number}
-    <UsersRM users={newArray}/>
-</>
+    return <>
+        <button onClick={() => {      setNumber(number + 1) ;
+            console.log("set number")
+        }}>+ </button>
+
+        <button onClick={() => {
+            addUser();
+            console.log("Add new user")
+        }}>Add user</button>
+
+        {number}
+        <UsersRM users={users}/>
+    </>
 }

@@ -1,5 +1,10 @@
 import React, {useCallback, useMemo, useState} from "react";
 
+export default {
+    title: "Use Callback Component"
+}
+
+
 export const LikeUseCallback = () => {
     const [books, setBooks] = useState<Array<string>>(["React", "JS", "CSS", "HTML", "Angular"]);
     const [number, setNumber] = useState<number>(0);
@@ -44,24 +49,23 @@ export const LikeUseCallback = () => {
 
         <Book books={newArray} addBook={memoizedAddBook2}/>
 
-        <Book addBook={memoizedAddBook2} books={books}/>
     </>
 }
+
 type BookSecretPropsType = {
     books: Array<string>
     addBook: () => void
 }
+
 const BooksSecret = (props: BookSecretPropsType) => {
     console.log("Books component is rendering")
     return <div>
-        <button onClick={() => {
-            props.addBook()
-        }}>Add book
-        </button>
+        <button onClick={() => {  props.addBook() }}>Add book  </button>
 
 
         {props.books.map((book, i) => <div key={i}>{book}</div>)}
 
     </div>
 }
+
 const Book = React.memo(BooksSecret);
